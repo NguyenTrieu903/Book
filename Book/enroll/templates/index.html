@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST" class="post-form" action="/emp">
+    {% csrf_token %}
+    <div class="container">
+        <br>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <h3>Enter Details</h3>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Authorname:</label>
+            <div class="col-sm-4">
+                {{ form.Authorname }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Booktitle:</label>
+            <div class="col-sm-4">
+                {{ form.Booktitle }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Imprint:</label>
+            <div class="col-sm-4">
+                {{ form.Imprint }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Publicationdate:</label>
+            <div class="col-sm-4">
+                {{ form.Publicationdate }}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock content %}

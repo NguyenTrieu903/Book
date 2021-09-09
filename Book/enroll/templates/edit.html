@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST" class="post-form" action="/update/{{book.id}}">
+    {% csrf_token %}
+    <div class="container">
+        <br>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <h3>Update Details</h3>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Authorname:</label>
+            <div class="col-sm-4">
+                <input type="text" name="Authorname" id="id_Authorname" required maxlength="50"
+                    value="{{ book.Authorname }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Booktitle:</label>
+            <div class="col-sm-4">
+                <input type="text" name="Booktitle" id="id_Booktitle" required maxlength="100"
+                    value="{{ book.Booktitle }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"> Imprint:</label>
+            <div class="col-sm-4">
+                <input type="text" name="Imprint" id="id_Imprint" required maxlength="254" value="{{ book.Imprint }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Publicationdate:</label>
+            <div class="col-sm-4">
+                <input type="text" name="Publicationdate" id="id_Publicationdate" required maxlength="15"
+                    value="{{ book.Publicationdate }}" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-success">Update</button>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock content %}
